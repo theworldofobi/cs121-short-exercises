@@ -8,7 +8,7 @@ def add_one_and_multiply(a, x):
 
     ### EXERCISE 1 -- YOUR CODE GOES HERE
     # Replace "None" with the correct expression
-    r = None
+    r = (a + 1) * x
 
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return r
@@ -19,7 +19,7 @@ def out_of_range(x, lb, ub):
 
     ### EXERCISE 2 -- YOUR CODE GOES HERE
     # Replace "None" with the correct expression
-    r = None
+    r = x in range(lb, ub + 1)
 
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return r
@@ -37,6 +37,13 @@ def number_string(x):
     # we ask you to compute in this exercise.
     s = None
 
+    if x > 0:
+        s = "POSITIVE"
+    elif x == 0:
+        s = "ZERO"
+    else:
+        s = "NEGATIVE"
+
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return s
 
@@ -51,7 +58,13 @@ def num_divisible(lb, ub, p, q):
     # Replace the following line with your code.
     # After running your code, variable n should contain the value
     # we ask you to compute in this exercise.
-    n = None
+    n = 0
+
+    for x in range(lb, ub + 1):
+        if x % p == 0 and x % q == 0:
+            continue
+        elif x % p == 0 or x % q == 0:
+            n += 1
 
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return n
@@ -66,7 +79,11 @@ def count_greater_than_val(lst, val):
     # Replace the following line with your code.
     # After running your code, variable n should contain the value
     # we ask you to compute in this exercise.
-    n = None
+    n = 0
+
+    for l in lst:
+        if l > val:
+            n += 1
 
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return n
@@ -81,7 +98,11 @@ def negate_list(lst):
     # Replace the following line with your code.
     # After running your code, variable n should contain the value
     # we ask you to compute in this exercise
-    new_lst = None
+    new_lst = []
+
+    for l in lst:
+        new_l = l * -1
+        new_lst.append(new_l)
 
     ### DO NOT MODIFY THE FOLLOWING LINE!
     return new_lst
